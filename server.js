@@ -3,13 +3,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Recipe = require('./components/Recipes');
 const cors = require('cors');
-const dotenv = require('dotenv');
+
 const recipeRoutes = require('./Routes/RecipeRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-mongoose.connect(process.env.MONGODB_URL)
-
+mongoose.connect(process.env.MONGODB_URL);
+console.log('check me out', process.env.MONGODB_URL);
 app.use(cors());
 app.use(express.json());
 
