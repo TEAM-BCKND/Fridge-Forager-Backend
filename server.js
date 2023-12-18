@@ -1,4 +1,4 @@
-// server.js
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -7,7 +7,7 @@ const recipeRoutes = require('./Routes/RecipeRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI ||'mongodb://localhost:27017/recipe-app';
+mongoose.connect(process.env.MONGODB_URL)
 
 app.use(cors());
 app.use(express.json());
