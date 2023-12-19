@@ -9,7 +9,7 @@ router.get('/edamam-recipes', async (req, res) => {
     const edamamApiKey = process.env.EDAMAM_API_KEY;
 
     // Make a GET request to the Edamam API using the retrieved API key
-    const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=31776401&app_key=${edamamApiKey}&diet=balanced&health=alcohol-free&cuisineType=American&mealType=Dinner&dishType=Main%20course&imageSize=REGULAR&random=true&field=ingredientLines`;
+    const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=beef&app_id=31776401&app_key=${edamamApiKey}&diet=balanced&health=alcohol-free&cuisineType=American&mealType=Dinner&dishType=Main%20course&imageSize=REGULAR&random=true&field=ingredientLines`;
 
     const response = await axios.get(apiUrl);
     const recipes = response.data; 
