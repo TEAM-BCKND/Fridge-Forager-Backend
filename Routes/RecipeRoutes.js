@@ -16,7 +16,7 @@ router.get('/edamam-recipes', async (req, res) => {
 
     // Use the ingredients parameter in the API URL
     // const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredients}&app_id=31776401&app_key=${edamamApiKey}&cuisineType=American&mealType=Dinner&dishType=Main%20course&imageSize=REGULAR&random=false&field=ingredients`;
-   const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredients}&app_id=${edamamApiId}&app_key=${edamamApiKey}&cuisineType=American&mealType=Dinner&dishType=Main%20course&imageSize=REGULAR&random=false&field=ingredients`;
+   const apiUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredients}&app_id=${edamamApiIdgit }&app_key=${edamamApiKey}&cuisineType=American&mealType=Dinner&dishType=Main%20course&imageSize=REGULAR&random=false&field=ingredients`;
 
     console.log('apiUrl:', apiUrl);
     const response = await axios.get(apiUrl);
