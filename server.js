@@ -5,10 +5,12 @@ const Recipe = require('./components/Recipes');
 const cors = require('cors');
 
 const recipeRoutes = require('./Routes/RecipeRoutes');
+const userRoutes = require('./Routes/UserRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 mongoose.connect(process.env.MONGODB_URL);
+// mongoose.connect('mongodb://localhost:27017/test');
 console.log('check me out', process.env.MONGODB_URL);
 app.use(cors());
 app.use(express.json());
@@ -21,7 +23,7 @@ db.once('open', () => {
 
 // Use your Edamam route
 app.use('/api', recipeRoutes);
-
+app.use('/api', userRoutes);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
